@@ -3,6 +3,7 @@ import {defineStore} from "pinia"
 export const useCallStore = defineStore("call",{  
     state: () => ({ 
         listPhoneNumbers: [],
+        
         phoneNumbers: {
         number: '',
         name: '',
