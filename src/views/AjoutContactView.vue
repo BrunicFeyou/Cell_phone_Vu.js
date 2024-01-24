@@ -30,7 +30,7 @@ export default {
 <div>
     <form @submit.prevent="ajoutContactStore.addContact()">
         <input type="text" v-model="contactDetails.name" placeholder="Nom" >
-        <input type="number" v-model="contactDetails.number" placeholder="N* tel" >
+        <input type="text" v-model="contactDetails.number" placeholder="N* tel" >
         <button type="submit">Ajouter</button>
     </form>
 </div>

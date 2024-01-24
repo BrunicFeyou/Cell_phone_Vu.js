@@ -3,7 +3,7 @@ import {defineStore} from "pinia"
 export const useCallStore = defineStore("call",{  
     state: () => ({ 
         listPhoneNumbers: [],
-        
+        chiffres: '',
         phoneNumbers: {
         number: '',
         name: '',
@@ -11,35 +11,36 @@ export const useCallStore = defineStore("call",{
         time: new Date().toLocaleTimeString(),     
         },
             
-        touches: [
-            ['1', '2', '3'],
-            ['4', '5', '6'],
-            ['7', '8', '9'],
-            ['*', '0', '#']
-        ] 
+       
     }), 
     actions: {
-        appelnumber() {
-            this.listPhoneNumbers.push(this.phoneNumbers)
+        inputNumber(index) {
+            this.chiffres += index
+        },
+        /* appelnumber() {
+            
             this.phoneNumbers = {
-                number: '', 
+                number: 'inconnue' , 
                 name: '',
                 date: new Date().toLocaleString(),
                 time: new Date().toLocaleTimeString(),  
+                
             }
-            console.log(this.listPhoneNumbers)
+            this.listPhoneNumbers.push(this.phoneNumbers)
+            console.log(this.listPhoneNumbers, 'listPhoneNumbers')
             
-        }, 
+        },  */
         callNumber(callerNumber) {
             this.listPhoneNumbers.push(callerNumber)
             this.callerNumber = {
-                number: '', 
+                number: "", 
                 name: '',
                 date: new Date().toLocaleString(),
                 time: new Date().toLocaleTimeString(),  
             }
             console.log(this.listPhoneNumbers)
-        }
+        },
+        
     }
 
 
